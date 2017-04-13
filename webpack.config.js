@@ -23,6 +23,7 @@ module.exports = (webpackDevPort) => {
       './index.js'
       // the entry point of the app
     ],
+
     output: {
       filename: 'bundle.js',
       // the output bundle
@@ -62,5 +63,11 @@ module.exports = (webpackDevPort) => {
       })
       // generate index.html file with bundle injected
     ],
+
+    externals: {
+      'cheerio': 'window',
+      'react/lib/ExecutionEnvironment': true,
+      'react/lib/ReactContext': true,
+    },
   };
 };
