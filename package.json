@@ -8,7 +8,7 @@
     "start": "npm-run-all --parallel dev-server *:watch",
     "app": "dev_appserver.py --port=8080 app.yaml",
     "dev-server": "babel-node --plugins transform-es2015-modules-commonjs scripts/dev-server.js",
-    "lint": "node_modules/.bin/esw webpack.*.js src/**/*.{js,jsx} scripts",
+    "lint": "esw --ext .js,.jsx webpack.*.js src scripts",
     "lint:watch": "npm run lint -- --watch",
     "test": "mocha --compilers jsx:babel-register --reporter progress scripts/test-setup.js \"src/**/*.test.js\"",
     "test:watch": "npm run test -- --watch"
